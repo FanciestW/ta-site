@@ -19,13 +19,9 @@ export default class DemoApp extends React.Component {
   render() {
     return (
       <div className='demo-app'>
-        <div className='demo-app-top'>
-          <button onClick={ this.toggleWeekends }>toggle weekends</button>&nbsp;
-          <button onClick={ this.gotoPast }>go to a date in the past</button>&nbsp;
-          (also, click a date/time to add an event)
-        </div>
         <div className='demo-app-calendar'>
           <FullCalendar
+            themeSystem='bootstrap'
             firstDay={1}
             defaultView="timeGridWeek"
             header={{
@@ -33,38 +29,14 @@ export default class DemoApp extends React.Component {
               center: 'title',
               right: 'timeGridWeek,timeGridDay'
             }}
+            nowIndicator={true}
             plugins={[ dayGridPlugin, timeGridPlugin, interactionPlugin ]}
             ref={ this.calendarComponentRef }
             weekends={ this.state.calendarWeekends }
             events={ this.state.calendarEvents }
-            // dateClick={ this.handleDateClick }
             />
         </div>
       </div>
     )
   }
-
-  toggleWeekends = () => {
-    this.setState({ // update a property
-      calendarWeekends: !this.state.calendarWeekends
-    })
-  }
-
-  gotoPast = () => {
-    let calendarApi = this.calendarComponentRef.current.getApi()
-    calendarApi.gotoDate('2000-01-01') // call a method on the Calendar object
-  }
-
-  // handleDateClick = (arg) => {
-  //   if (confirm('Would you like to add an event to ' + arg.dateStr + ' ?')) {
-  //     this.setState({  // add new event data
-  //       calendarEvents: this.state.calendarEvents.concat({ // creates a new array
-  //         title: 'New Event',
-  //         start: arg.date,
-  //         allDay: arg.allDay
-  //       })
-  //     })
-  //   }
-  // }
-
 }
