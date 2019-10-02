@@ -11,14 +11,6 @@ class Calendar extends Component {
 
   constructor(props) {
     super(props);
-    this.calendarComponentRef = React.createRef();
-    this.state = {
-      calendarWeekends: true,
-      calendarEvents: [ // initial event data
-        { title: 'Office Hours\nLib Café', start: new Date('September 30, 2019 17:00:00'), end: new Date('September 30, 2019 21:00:00') },
-        { title: 'Office Hours\nLib Café', start: new Date('October 2, 2019 16:00:00'), end: new Date('October 2, 2019 18:00:00') }
-      ]
-    };
   }
 
   render() {
@@ -39,8 +31,7 @@ class Calendar extends Component {
           nowIndicator={true}
           googleCalendarApiKey={process.env.REACT_APP_CAL_API_KEY}
           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin, googleCalendarPlugin]}
-          ref={this.calendarComponentRef}
-          weekends={this.state.calendarWeekends}
+          weekends={true}
           events={{ googleCalendarId: '0h3m4vqmstfon4fpsjj54st57k@group.calendar.google.com' }}
         />
       </div>
