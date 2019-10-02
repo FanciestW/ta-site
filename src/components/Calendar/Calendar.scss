@@ -1,8 +1,6 @@
 // you must include each plugins' css
 // paths prefixed with ~ signify node_modules
 @import './bootstrap.min.css';
-@import 'https://use.fontawesome.com/releases/v5.0.6/css/all.css';
-@import 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css';
 @import '~@fullcalendar/core/main.css';
 @import '~@fullcalendar/daygrid/main.css';
 @import '~@fullcalendar/timegrid/main.css';
@@ -20,3 +18,7 @@
   margin: 0 auto;
   max-width: 900px;
 }
+
+.fc-today {
+  background: rgba(111, 151, 190, 0.5) !important;
+} 
