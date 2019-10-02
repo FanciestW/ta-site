@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Calendar from '../Calendar/Calendar';
-import { AppBar, Button, IconButton, Toolbar, Typography } from '@material-ui/core';
+import { AppBar, IconButton, Toolbar, Typography } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 
 class App extends Component {
