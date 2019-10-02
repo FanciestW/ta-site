@@ -14,9 +14,8 @@ class App extends Component {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6">
-              News
+              Calendar
             </Typography>
-            <Button color="inherit">Login</Button>
           </Toolbar>
         </AppBar>
         <Calendar />

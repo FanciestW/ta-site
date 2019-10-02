@@ -22,7 +22,7 @@ class Calendar extends Component {
 
   render() {
     return (
-      <div className='demo-app'>
+      <div className='demo-app' style={{marginTop: '2rem'}}>
         <div className='demo-app-calendar'>
           <FullCalendar
             themeSystem='bootstrap'
