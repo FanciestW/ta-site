@@ -1,23 +1,16 @@
 import React, { Component } from 'react';
+import Navbar from '../Navbar/Navbar';
 import Calendar from '../Calendar/Calendar';
-import { AppBar, IconButton, Toolbar, Typography } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
+import './App.scss';
+require('dotenv').config();
+
 
 class App extends Component {
 
   render() {
     return (
       <div className='app'>
-        <AppBar position="static">
-          <Toolbar>
-            <IconButton edge="start"color="inherit" aria-label="menu">
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="h6">
-              Calendar
-            </Typography>
-          </Toolbar>
-        </AppBar>
+        <Navbar title='Calendar' />
         <Calendar />
       </div>
     );
