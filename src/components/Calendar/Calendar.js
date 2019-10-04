@@ -11,12 +11,31 @@ class Calendar extends Component {
 
   constructor(props) {
     super(props);
+    this.state = { width: window.innerWidth, height: window.innerHeight };
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+    this.calendarRef = React.createRef();
+  }
+
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+    this.calendarRef.current.getApi().changeView(this.state.width <= 500 ? 'timeGridDay' : 'timeGridWeek');
+  }
+  
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+    this.calendarRef.current.getApi().changeView(this.state.width <= 500 ? 'timeGridDay' : 'timeGridWeek');
+  }
+  
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+    this.calendarRef.current.getApi().changeView(this.state.width <= 500 ? 'timeGridDay' : 'timeGridWeek');
   }
 
   render() {
     return (
       <div className='calendar-view' style={{ marginTop: '2rem' }}>
-        <FullCalendar
+        <FullCalendar ref={this.calendarRef}
           themeSystem='bootstrap'
           firstDay={1}
           defaultView="timeGridWeek"
