@@ -6,6 +6,8 @@ import TodayIcon from '@material-ui/icons/Today';
 import HomeIcon from '@material-ui/icons/Home';
 import ComputerIcon from '@material-ui/icons/Computer';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
 import './Navbar.scss';
 
 class Navbar extends Component {
@@ -32,6 +34,8 @@ class Navbar extends Component {
       }
     };
 
+    const links = ['/', '/calendar', '/resources', '/contact'];
+    const icons = [<HomeIcon key={0}/>, <TodayIcon key={1}/>, <ComputerIcon key={3}/>, <ContactMailIcon key={4}/>];
     const sideList = (
       <div className={'side-list'}
         role="presentation"
@@ -39,10 +43,12 @@ class Navbar extends Component {
         onKeyDown={toggleDrawer}>
         <List>
           {['Home', 'Calendar', 'Resources', 'Contact Me'].map((text, index) => (
-            <ListItem button key={text} className='drawer-list-item'>
-              <ListItemIcon className='drawer-icon'>{[<HomeIcon key={0}/>, <TodayIcon key={0}/>, <ComputerIcon key={0}/>, <ContactMailIcon key={0}/>][index]}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
+            <Link to={links[index]} key={links.key}>
+              <ListItem button key={text} className='drawer-list-item'>
+                <ListItemIcon className='drawer-icon'>{icons[index]}</ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItem>
+            </Link>
           ))}
         </List>
       </div>
@@ -68,4 +74,4 @@ Navbar.propTypes = {
   title: PropTypes.string
 };
 
-export default Navbar;
+export default withRouter(Navbar);

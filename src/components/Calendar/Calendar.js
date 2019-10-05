@@ -38,6 +38,7 @@ class Calendar extends Component {
         <FullCalendar ref={this.calendarRef}
           themeSystem='bootstrap'
           firstDay={1}
+          allDaySlot={false}
           defaultView="timeGridWeek"
           minTime='08:00:00'
           maxTime='24:00:00'
