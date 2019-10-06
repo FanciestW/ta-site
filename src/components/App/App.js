@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from '../Navbar/Navbar';
 import Calendar from '../Calendar/Calendar';
+import Contact from '../Contact/Contact';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.scss';
 require('dotenv').config();
@@ -18,7 +19,7 @@ function RouteResource() {
 }
 
 function RouteContact() {
-  return <h2>Contact</h2>;
+  return <Contact />;
 }
 
 
