@@ -43,7 +43,7 @@ class Navbar extends Component {
         onKeyDown={toggleDrawer}>
         <List>
           {['Home', 'Calendar', 'Resources', 'Contact Me'].map((text, index) => (
-            <Link to={links[index]} key={links.key}>
+            <Link to={links[index]} key={links.key} style={{color: 'white', textDecoration: 'none'}}>
               <ListItem button key={text} className='drawer-list-item'>
                 <ListItemIcon className='drawer-icon'>{icons[index]}</ListItemIcon>
                 <ListItemText primary={text} />

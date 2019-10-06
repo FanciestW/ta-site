@@ -34,15 +34,15 @@ class App extends Component {
         <div className='app'>
           <Navbar title='Calendar' />
           <Switch>
+            <Route exact path='/'>
+              <RouteHome />
+            </Route>
             <Route exact path='/calendar' component={Calendar}/>
             <Route exact path='/resources'>
               <RouteResource />
             </Route>
             <Route exact path='/contact'>
               <RouteContact />
-            </Route>
-            <Route exact path='/'>
-              <RouteHome />
             </Route>
           </Switch>
         </div>
