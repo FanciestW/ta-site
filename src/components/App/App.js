@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import Navbar from '../Navbar/Navbar';
 import Calendar from '../Calendar/Calendar';
 import Contact from '../Contact/Contact';
