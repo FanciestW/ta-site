@@ -32,6 +32,8 @@ class App extends Component {
     const navTitles = ['Home', 'Calendar', 'Classes', 'Contact'];
     const navLinks = ['/', '/calendar', '/classes', '/contact'];
     const navIcons = [<HomeIcon key={0} />, <TodayIcon key={1} />, <SchoolIcon key={3} />, <ContactMailIcon key={4} />];
+    const classNums = ['CSCI 2212 / 6610', 'CSCI 4526 / 6626', 'CSCI 4453 / 6672'];
+    const classNames = ['Intermediate C/C++', 'Object Oriented Programming w/ C++', 'Android Development'];
     return (
       <MuiThemeProvider theme={theme}>
         <Router>
@@ -41,9 +43,15 @@ class App extends Component {
               <Route exact path='/'>
                 <RouteHome />
               </Route>
-              <Route exact path='/calendar' component={Calendar} />
-              <Route exact path='/classes' component={Classes} />
-              <Route exact path='/contact' component={Contact} />
+              <Route exact path='/calendar'>
+                <Calendar />
+              </Route>
+              <Route exact path='/classes' >
+                <Classes classNames={classNames} classNums={classNums}/>
+              </Route>
+              <Route exact path='/contact'>
+                <Contact />
+              </Route>
             </Switch>
           </div>
         </Router>
