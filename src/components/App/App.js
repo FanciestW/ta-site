@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Navbar from '../Navbar/Navbar';
 import Calendar from '../Calendar/Calendar';
 import Contact from '../Contact/Contact';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import TodayIcon from '@material-ui/icons/Today';
+import HomeIcon from '@material-ui/icons/Home';
+import ComputerIcon from '@material-ui/icons/Computer';
+import ContactMailIcon from '@material-ui/icons/ContactMail';
 import './App.scss';
 require('dotenv').config();
 
@@ -37,11 +42,14 @@ class App extends Component {
   }
 
   render() {
+    const navTitles = ['Home', 'Calendar', 'Resources', 'Contact'];
+    const navLinks = ['/', '/calendar', '/resources', '/contact'];
+    const navIcons = [<HomeIcon key={0}/>, <TodayIcon key={1}/>, <ComputerIcon key={3}/>, <ContactMailIcon key={4}/>];
     return (
       <MuiThemeProvider theme={theme}>
         <Router>
           <div className='app'>
-            <Navbar title='Calendar' />
+            <Navbar titles={navTitles} links={navLinks} icons={navIcons} onClick={this.test}/>
             <Switch>
               <Route exact path='/'>
                 <RouteHome />
