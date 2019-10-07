@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
+import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 
 class Contact extends Component {
 
   render() {
     return (
-      <h1>Contact Me</h1>
+      <Card className={'contact-card'}>
+        <CardContent>
+          <Typography variant={'h2'} component={'p'}>
+            William Lin
+          </Typography>
+        </CardContent>
+      </Card>
     );
   }
 }

@@ -3,8 +3,15 @@ import Navbar from '../Navbar/Navbar';
 import Calendar from '../Calendar/Calendar';
 import Contact from '../Contact/Contact';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import './App.scss';
 require('dotenv').config();
+
+const theme = createMuiTheme({
+  palette: {
+    type: 'dark',
+  },
+});
 
 function RouteHome() {
   return <h2>Home</h2>;
@@ -31,23 +38,25 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
-        <div className='app'>
-          <Navbar title='Calendar' />
-          <Switch>
-            <Route exact path='/'>
-              <RouteHome />
-            </Route>
-            <Route exact path='/calendar' component={Calendar}/>
-            <Route exact path='/resources'>
-              <RouteResource />
-            </Route>
-            <Route exact path='/contact'>
-              <RouteContact />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
+      <MuiThemeProvider theme={theme}>
+        <Router>
+          <div className='app'>
+            <Navbar title='Calendar' />
+            <Switch>
+              <Route exact path='/'>
+                <RouteHome />
+              </Route>
+              <Route exact path='/calendar' component={Calendar} />
+              <Route exact path='/resources'>
+                <RouteResource />
+              </Route>
+              <Route exact path='/contact'>
+                <RouteContact />
+              </Route>
+            </Switch>
+          </div>
+        </Router>
+      </MuiThemeProvider>
     );
   }
 }

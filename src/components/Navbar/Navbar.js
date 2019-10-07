@@ -44,8 +44,8 @@ class Navbar extends Component {
         <List>
           {['Home', 'Calendar', 'Resources', 'Contact Me'].map((text, index) => (
             <Link to={links[index]} key={links.key} style={{color: 'white', textDecoration: 'none'}}>
-              <ListItem button key={text} className='drawer-list-item'>
-                <ListItemIcon className='drawer-icon'>{icons[index]}</ListItemIcon>
+              <ListItem button key={text} className={'drawer-list-item'}>
+                <ListItemIcon className={'drawer-icon'}>{icons[index]}</ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
             </Link>
@@ -62,7 +62,7 @@ class Navbar extends Component {
           </IconButton>
           <Typography variant="h6">{this.props.title || 'Title'}</Typography>
         </Toolbar>
-        <SwipeableDrawer open={this.state.open} onOpen={toggleDrawer} onClose={toggleDrawer} className='side-drawer'>
+        <SwipeableDrawer open={this.state.open} onOpen={toggleDrawer} onClose={toggleDrawer} className={'side-drawer'}>
           {sideList}
         </SwipeableDrawer>
       </AppBar>
