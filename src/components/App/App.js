@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from '../Navbar/Navbar';
+import Home from '../Home/Home';
 import Calendar from '../Calendar/Calendar';
 import Classes from '../Classes/Classes';
 import Contact from '../Contact/Contact';
@@ -18,10 +19,6 @@ const theme = createMuiTheme({
   },
 });
 
-function RouteHome() {
-  return <h2>Home</h2>;
-}
-
 class App extends Component {
 
   constructor(props) {
@@ -29,6 +26,11 @@ class App extends Component {
   }
 
   render() {
+    const homeIcons = [<TodayIcon key={1} />, <SchoolIcon key={3} />, <ContactMailIcon key={4} />];
+    const homeActions = ['Office Hour Calendar', 'Supported Classes', 'Contact Info'];
+    const homeDescs = ['Need to Check Office Hours?', 'Checking what classes I am the TA for?', 'Looking for contact information?'];
+    const homeLinkTitles = ['View Calendar', 'See Supported Classes', 'Get My Contact Info'];
+    const homeLinks = ['/calendar', '/classes', '/contact'];
     const navTitles = ['Home', 'Calendar', 'Classes', 'Contact'];
     const navLinks = ['/', '/calendar', '/classes', '/contact'];
     const navIcons = [<HomeIcon key={0} />, <TodayIcon key={1} />, <SchoolIcon key={3} />, <ContactMailIcon key={4} />];
@@ -41,7 +43,7 @@ class App extends Component {
             <Navbar titles={navTitles} links={navLinks} icons={navIcons} onClick={this.test} />
             <Switch>
               <Route exact path='/'>
-                <RouteHome />
+                <Home icons={homeIcons} actions={homeActions} descs={homeDescs} linkTitles={homeLinkTitles} links={homeLinks} />
               </Route>
               <Route exact path='/calendar'>
                 <Calendar />

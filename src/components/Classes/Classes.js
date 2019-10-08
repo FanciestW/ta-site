@@ -14,19 +14,19 @@ class Classes extends Component {
     const classNames = this.props.classNames || [];
     return (
       <Grid container direction="row" className="classes-grid-container" spacing={4}>
-        <Grid item xs={12}>
-          <Typography variant="h3" component="p">
+        <Grid item xs={12} className="class-grid-item">
+          <Typography variant="h2" component="h2">
             Supported Classes:
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <Grid container spacing={2} className="class-card-grid"
+          <Grid container spacing={2}
             direction="row"
             justify="center"
             alignItems="center">
             {classNames.map((value, index) => (
               <Grid key={value} item>
-                <Paper className="paper-card">
+                <Paper className="class-paper-card">
                   <Typography variant="subtitle" component="p">
                     {classNums[index]}
                   </Typography>
