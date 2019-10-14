@@ -38,9 +38,9 @@ class Navbar extends Component {
         <List>
           {titles.map((text, index) => (
             <Link to={links[index]}
-              key={links.key}
+              key={index}
               style={{color: 'white', textDecoration: 'none'}}>
-              <ListItem button key={text} className={'drawer-list-item'}>
+              <ListItem button className={'drawer-list-item'}>
                 <ListItemIcon className={'drawer-icon'}>{icons[index]}</ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>

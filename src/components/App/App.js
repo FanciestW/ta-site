@@ -11,7 +11,6 @@ import HomeIcon from '@material-ui/icons/Home';
 import SchoolIcon from '@material-ui/icons/School';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
 import './App.scss';
-require('dotenv').config();
 
 const theme = createMuiTheme({
   palette: {

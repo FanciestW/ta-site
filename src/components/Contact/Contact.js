@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Card, CardActions, CardContent, Divider, Grid, Link, Typography, CardMedia } from '@material-ui/core';
+import { Card, CardContent, Divider, Grid, Link, Typography, CardMedia } from '@material-ui/core';
 import EmailIcon from '@material-ui/icons/Email';
 import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
 import profile_pic from './profile_pic.jpg';

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Card, CardActions, CardContent, Divider, Grid, Paper, Typography } from '@material-ui/core';
+import { Button, Card, CardActions, CardContent, Divider, Grid, Typography } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import './Home.scss';
 
