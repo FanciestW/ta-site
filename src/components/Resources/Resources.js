@@ -20,7 +20,7 @@ class Resources extends Component {
         direction='column'
         alignItems='center'
         justify='center'
-        style={{minHeight: '100vh'}}>
+        style={{minHeight: 'calc(100vh - 56px)'}}>
         <div className='list'>
           <List component="nav" aria-label="links">
             <ListSubheader component="div">Intermediate C/C++</ListSubheader>

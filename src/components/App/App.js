@@ -30,7 +30,7 @@ class App extends Component {
     const homeIcons = [<TodayIcon key={1} />, <CloudDownloadIcon key={2} />, <SchoolIcon key={3} />, <ContactMailIcon key={4} />];
     const homeActions = ['Office Hour Calendar', 'Student Resources', 'Supported Classes', 'Contact Info'];
     const homeDescs = ['Need to Check Office Hours?', 'Looking for resources like lecture notes and helpful links?', 'Checking what classes I am the TA for?', 'Looking for contact information?'];
-    const homeLinkTitles = ['View Calendar', 'Checkout Resources', 'See Supported Classes', 'Get My Contact Info'];
+    const homeLinkTitles = ['View Calendar', 'See Resources', 'Check Supported Classes', 'Get My Contact Info'];
     const homeLinks = ['/calendar', '/resources', '/classes', '/contact'];
     const navTitles = ['Home', 'Calendar', 'Resources', 'Classes', 'Contact'];
     const navLinks = ['/', '/calendar', '/resources', '/classes', '/contact'];
