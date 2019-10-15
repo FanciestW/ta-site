@@ -4,7 +4,7 @@ import LinkIcon from '@material-ui/icons/Link';
 import './Resources.scss';
 
 function ListItemLink(props) {
-  return <ListItem button component="a" {...props} />;
+  return <ListItem button className="list-link" component="a" {...props} />;
 }
 
 class Resources extends Component {
@@ -41,6 +41,26 @@ class Resources extends Component {
                 <LinkIcon />
               </ListItemIcon>
               <ListItemText primary="C++ Reference Site" />
+            </ListItemLink>
+            <Divider />
+            <ListSubheader component="div">Other Classes</ListSubheader>
+            <ListItemLink target='_blank' href='http://eliza.newhaven.edu/sysprog/'>
+              <ListItemIcon>
+                <LinkIcon />
+              </ListItemIcon>
+              <ListItemText primary="Systems Programming Website" />
+            </ListItemLink>
+            <ListItemLink target='_blank' href='http://eliza.newhaven.edu/lang/'>
+              <ListItemIcon>
+                <LinkIcon />
+              </ListItemIcon>
+              <ListItemText primary="Structure of Programming Languages Website" />
+            </ListItemLink>
+            <ListItemLink target='_blank' href='http://eliza.newhaven.edu/datastrG/'>
+              <ListItemIcon>
+                <LinkIcon />
+              </ListItemIcon>
+              <ListItemText primary="Data Structures Website" />
             </ListItemLink>
           </List>
         </div>
