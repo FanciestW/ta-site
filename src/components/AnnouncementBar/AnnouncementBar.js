@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { Container, Divider, Grid } from '@material-ui/core';
+import { Grid, IconButton, Typography } from '@material-ui/core';
+import ErrorIcon from '@material-ui/icons/Error';
+import WarningIcon from '@material-ui/icons/Warning';
+import NotificationImportantIcon from '@material-ui/icons/NotificationImportant';
+import CancelIcon from '@material-ui/icons/Cancel';
 import PropTypes from 'prop-types';
 import './AnnouncementBar.scss';
 
@@ -7,18 +11,54 @@ class AnnouncementBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      closed: false,
       colors: ['red', 'orange', 'green'],
+      icons: [<ErrorIcon key={0} fontSize='large' />, <WarningIcon key={1} fontSize='large' />, <NotificationImportantIcon key={2} fontSize='large' />],
     };
   }
 
   render() {
-    const colors = this.state.colors;
+    const icons = this.props.icons || this.state.icons;
+    const colors = this.props.colors || this.state.colors;
     const priority = this.props.priority || 0;
-    return (
+    return this.state.closed ? null : (
       <div className="bar"
-        style={{width: '100%', backgroundColor: colors[priority]}}>
-        <p style={{margin: 0}}>{this.props.title}</p>
-        <p style={{margin: 0}}>{this.props.message}</p>
+        style={{ width: '100%', backgroundColor: colors[priority] }}>
+        <Grid container
+          spacing={2}
+          justify='center'
+          alignItems='center'>
+          <Grid item xs={1}>
+            {icons[priority]}
+          </Grid>
+          <Grid item xs>
+            <Grid container spacing={1} direction='column'>
+              <Grid className='announcement-text' item xs>
+                <Typography variant='h6'
+                  component='h6'
+                  align='left'
+                  display='block'
+                  style={{ margin: 0, padding: 0 }}>
+                  {this.props.title}
+                </Typography>
+              </Grid>
+              <Grid className='announcement-text' item xs>
+                <Typography variant='p'
+                  component='p'
+                  align='left'
+                  display='block'
+                  style={{ margin: 0, padding: 0 }}>
+                  {this.props.message}
+                </Typography>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item xs={1} align='center'>
+            <IconButton onClick={() => {this.setState({closed: true});}} >
+              <CancelIcon />
+            </IconButton>
+          </Grid>
+        </Grid>
       </div>
     );
   }
@@ -28,9 +68,10 @@ AnnouncementBar.propTypes = {
   title: PropTypes.string.isRequired,
   message: PropTypes.string.isRequired,
   colors: PropTypes.array,
-  priority: function(props, propName) {
+  icons: PropTypes.array,
+  priority: function (props, propName) {
     let priority = props[propName];
-    
+
     if (priority === undefined) {
       return new Error('Sorry you must include a priority number (0-2).');
     }
