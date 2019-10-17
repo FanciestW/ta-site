@@ -22,10 +22,6 @@ const theme = createMuiTheme({
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const homeIcons = [<TodayIcon key={1} />, <CloudDownloadIcon key={2} />, <SchoolIcon key={3} />, <ContactMailIcon key={4} />];
     const homeActions = ['Office Hour Calendar', 'Student Resources', 'Supported Classes', 'Contact Info'];

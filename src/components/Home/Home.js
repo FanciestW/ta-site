@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-import { Button, Card, CardActions, CardContent, Divider, Grid, Typography } from '@material-ui/core';
+import { Button, Card, CardActions, CardContent, Divider, Grid, Typography, ButtonBase } from '@material-ui/core';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './Home.scss';
 
 class Home extends Component {
-
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     const icons = this.props.icons;
@@ -30,16 +27,19 @@ class Home extends Component {
               {actions.map((value, index) => (
                 <Grid key={value} item>
                   <Card className="home-paper-card">
-                    <CardContent>
-                      {icons[index]}
-                      <Typography variant="subtitle" component="p">
-                        {value}
-                      </Typography>
-                      <Divider className="class-card-divider" />
-                      <Typography variant="h5" component="p" className="desc">
-                        {descs[index]}
-                      </Typography>
-                    </CardContent>
+                    <ButtonBase className="button-base" 
+                      onClick={() => {this.props.history.push(links[index]);}}>
+                      <CardContent>
+                        {icons[index]}
+                        <Typography variant="subtitle1" component="p">
+                          {value}
+                        </Typography>
+                        <Divider className="class-card-divider" />
+                        <Typography variant="h5" component="p" className="desc">
+                          {descs[index]}
+                        </Typography>
+                      </CardContent>
+                    </ButtonBase>
                     <CardActions>
                       <Button className="button-link"
                         href={links[index]}
@@ -65,6 +65,9 @@ Home.propTypes = {
   descs: PropTypes.array,
   linkTitles: PropTypes.array,
   links: PropTypes.array,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
-export default Home;
+export default withRouter(Home);

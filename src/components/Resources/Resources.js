@@ -9,10 +9,6 @@ function ListItemLink(props) {
 
 class Resources extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <Grid container
@@ -44,6 +40,12 @@ class Resources extends Component {
             </ListItemLink>
             <Divider />
             <ListSubheader component="div">Other Classes</ListSubheader>
+            <ListItemLink target='_blank' href='http://eliza.newhaven.edu/cpp/'>
+              <ListItemIcon>
+                <LinkIcon />
+              </ListItemIcon>
+              <ListItemText primary="Adv. / Object Oriented C++ Website" />
+            </ListItemLink>
             <ListItemLink target='_blank' href='http://eliza.newhaven.edu/sysprog/'>
               <ListItemIcon>
                 <LinkIcon />

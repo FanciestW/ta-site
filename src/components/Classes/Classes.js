@@ -5,10 +5,6 @@ import './Classes.scss';
 
 class Classes extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const classNums = this.props.classNums || [];
     const classNames = this.props.classNames || [];
@@ -27,7 +23,7 @@ class Classes extends Component {
             {classNames.map((value, index) => (
               <Grid key={value} item>
                 <Paper className="class-paper-card">
-                  <Typography variant="subtitle" component="p">
+                  <Typography variant="subtitle1" component="p">
                     {classNums[index]}
                   </Typography>
                   <Divider className="class-card-divider" />
