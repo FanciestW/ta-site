@@ -37,8 +37,8 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
         <Router>
           <div className='app'>
-            <Announcements />
             <Navbar titles={navTitles} links={navLinks} icons={navIcons} onClick={this.test} />
+            <Announcements />
             <Switch>
               <Route exact path='/'>
                 <Home icons={homeIcons} actions={homeActions} descs={homeDescs} linkTitles={homeLinkTitles} links={homeLinks} />

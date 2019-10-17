@@ -18,11 +18,8 @@ class Calendar extends Component {
     this.calendarRef = React.createRef();
   }
 
-  componentWillMount() {
-    this.getCalendarEvents();
-  }
-
   componentDidMount() {
+    this.getCalendarEvents();
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
     this.calendarRef.current.getApi().changeView(this.state.width <= 500 ? 'timeGridDay' : 'timeGridWeek');
