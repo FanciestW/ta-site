@@ -7,7 +7,6 @@ import { withRouter } from 'react-router';
 import './Navbar.scss';
 
 class Navbar extends Component {
-
   constructor(props) {
     super(props);
     this.state = {

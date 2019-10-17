@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from '../Navbar/Navbar';
+import Announcements from '../Announcements/Announcements';
 import Home from '../Home/Home';
 import Calendar from '../Calendar/Calendar';
 import Resources from '../Resources/Resources';
@@ -21,7 +22,6 @@ const theme = createMuiTheme({
 });
 
 class App extends Component {
-
   render() {
     const homeIcons = [<TodayIcon key={1} />, <CloudDownloadIcon key={2} />, <SchoolIcon key={3} />, <ContactMailIcon key={4} />];
     const homeActions = ['Office Hour Calendar', 'Student Resources', 'Supported Classes', 'Contact Info'];
@@ -37,6 +37,7 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
         <Router>
           <div className='app'>
+            <Announcements />
             <Navbar titles={navTitles} links={navLinks} icons={navIcons} onClick={this.test} />
             <Switch>
               <Route exact path='/'>

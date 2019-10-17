@@ -16,6 +16,9 @@ class Calendar extends Component {
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     this.getCalendarEvents = this.getCalendarEvents.bind(this);
     this.calendarRef = React.createRef();
+  }
+
+  componentWillMount() {
     this.getCalendarEvents();
   }
 
@@ -40,9 +43,9 @@ class Calendar extends Component {
       uri: EVENTS_SERVER,
       json: true,
     }).then((eventsRes) => {
-      this.setState({events: eventsRes.events });
+      this.setState({ events: eventsRes.events });
     }).catch((eventsErr) => {
-      console.log(`Error: ${JSON.stringify(eventsErr)}`);
+      console.log(`Events API Error: ${JSON.stringify(eventsErr)}`);
     });
   }
 
