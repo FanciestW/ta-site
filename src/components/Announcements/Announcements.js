@@ -3,7 +3,7 @@ import request from 'request-promise';
 import AnnouncementBar from '../AnnouncementBar/AnnouncementBar';
 import './Announcements.scss';
 
-const ANNOUNCEMENT_SERVER = 'http://localhost:5000/announcements';
+const ANNOUNCEMENT_SERVER = 'https://xazbttr8qi.execute-api.us-east-1.amazonaws.com/dev/announcements';
 
 class Announcements extends Component {
   constructor(props) {
