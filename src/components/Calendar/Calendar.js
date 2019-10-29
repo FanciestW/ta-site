@@ -30,7 +30,7 @@ class Calendar extends Component {
   }
   
   updateWindowDimensions() {
-    if (this.state.width != window.innerWidth) {
+    if (this.state.width !== window.innerWidth) {
       this.calendarRef.current.getApi().changeView(this.state.width <= 500 ? 'timeGridDay' : 'timeGridWeek');
     }
     this.setState({ width: window.innerWidth, height: window.innerHeight });
