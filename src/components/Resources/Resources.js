@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Divider, Grid, List, ListItem, ListItemIcon, ListItemText, ListSubheader } from '@material-ui/core';
+import { Divider, Grid, List, ListItem, ListItemIcon, ListItemText, ListSubheader, Paper } from '@material-ui/core';
 import LinkIcon from '@material-ui/icons/Link';
 import './Resources.scss';
 
@@ -16,8 +16,8 @@ class Resources extends Component {
         direction='column'
         alignItems='center'
         justify='center'
-        style={{minHeight: 'calc(100vh - 56px)'}}>
-        <div className='list'>
+        style={{ minHeight: 'calc(100vh - 56px)' }}>
+        <Paper className='list'>
           <List component="nav" aria-label="links">
             <ListSubheader component="div">Intermediate C/C++</ListSubheader>
             <ListItemLink target='_blank' href='https://unhnewhaven-my.sharepoint.com/:f:/g/personal/wlin2_unh_newhaven_edu/EiDLMHQp92ZKn82kkwNC5oEBTHzMyMQu6q-oJSh_SEIy-Q?e=AD3G14'>
@@ -64,8 +64,22 @@ class Resources extends Component {
               </ListItemIcon>
               <ListItemText primary="Data Structures Website" />
             </ListItemLink>
+            <Divider />
+            <ListSubheader component="div">Miscellaneous</ListSubheader>
+            <ListItemLink target='_blank' href='https://github.com/OpenGenus/Best-student-discount-services'>
+              <ListItemIcon>
+                <LinkIcon />
+              </ListItemIcon>
+              <ListItemText primary="List of Various Student Discounts" />
+            </ListItemLink>
+            <ListItemLink target='_blank' href='https://github.com/AchoArnold/discount-for-student-dev'>
+              <ListItemIcon>
+                <LinkIcon />
+              </ListItemIcon>
+              <ListItemText primary="Student Discounts on Developer Tools" />
+            </ListItemLink>
           </List>
-        </div>
+        </Paper>
       </Grid>
     );
   }
