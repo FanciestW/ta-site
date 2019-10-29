@@ -1,4 +1,12 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import TodayIcon from '@material-ui/icons/Today';
+import HomeIcon from '@material-ui/icons/Home';
+import SchoolIcon from '@material-ui/icons/School';
+import ContactMailIcon from '@material-ui/icons/ContactMail';
+import CloudDownloadIcon from '@material-ui/icons/CloudDownload';
 import Navbar from '../Navbar/Navbar';
 import Announcements from '../Announcements/Announcements';
 import Home from '../Home/Home';
@@ -6,13 +14,6 @@ import Calendar from '../Calendar/Calendar';
 import Resources from '../Resources/Resources';
 import Classes from '../Classes/Classes';
 import Contact from '../Contact/Contact';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import TodayIcon from '@material-ui/icons/Today';
-import HomeIcon from '@material-ui/icons/Home';
-import SchoolIcon from '@material-ui/icons/School';
-import ContactMailIcon from '@material-ui/icons/ContactMail';
-import CloudDownloadIcon from '@material-ui/icons/CloudDownload';
 import './App.scss';
 
 const theme = createMuiTheme({
@@ -35,6 +36,7 @@ class App extends Component {
     const classNames = ['Intermediate C/C++', 'Object Oriented Programming w/ C++', 'Android Development'];
     return (
       <MuiThemeProvider theme={theme}>
+        <CssBaseline />
         <Router>
           <div className='app'>
             <Navbar titles={navTitles} links={navLinks} icons={navIcons} onClick={this.test} />
