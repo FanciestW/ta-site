@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardContent, Divider, Grid, Link, Typography, CardMedia } from '@material-ui/core';
+import { Button, Card, CardContent, Divider, Grid, Link, Typography, CardMedia, CardActions } from '@material-ui/core';
 import EmailIcon from '@material-ui/icons/Email';
 import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
 import profile_pic from './profile_pic.jpg';
@@ -42,6 +42,10 @@ class Contact extends Component {
               </Link>
             </Typography>
           </CardContent>
+          <Divider />
+          <CardActions>
+            <Button size="small">Send Email</Button>
+          </CardActions>
         </Card>
       </Grid>
     );
