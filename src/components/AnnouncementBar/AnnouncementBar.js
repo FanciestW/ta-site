@@ -28,10 +28,10 @@ class AnnouncementBar extends Component {
           spacing={2}
           justify='center'
           alignItems='center'>
-          <Grid item xs={1}>
+          <Grid item xs>
             {icons[priority]}
           </Grid>
-          <Grid item xs>
+          <Grid item xs={8}>
             <Grid container spacing={1} direction='column'>
               <Grid className='announcement-text' item xs>
                 <Typography variant='h6'
@@ -53,7 +53,7 @@ class AnnouncementBar extends Component {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={1} align='center'>
+          <Grid item xs align='center'>
             <IconButton onClick={() => {this.setState({closed: true});}} >
               <CancelIcon />
             </IconButton>
