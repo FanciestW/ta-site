@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Divider, Grid, List, ListItem, ListItemIcon, ListItemText, ListSubheader, Paper } from '@material-ui/core';
 import LinkIcon from '@material-ui/icons/Link';
+import GitHubIcon from '@material-ui/icons/GitHub';
 import './Resources.scss';
 
 function ListItemLink(props) {
@@ -66,15 +67,21 @@ class Resources extends Component {
             </ListItemLink>
             <Divider />
             <ListSubheader component="div">Miscellaneous</ListSubheader>
+            <ListItemLink target='_blank' href='https://education.github.com/pack/offers'>
+              <ListItemIcon>
+                <GitHubIcon />
+              </ListItemIcon>
+              <ListItemText primary="GitHub Education Pack" />
+            </ListItemLink>
             <ListItemLink target='_blank' href='https://github.com/OpenGenus/Best-student-discount-services'>
               <ListItemIcon>
-                <LinkIcon />
+                <GitHubIcon />
               </ListItemIcon>
               <ListItemText primary="List of Various Student Discounts" />
             </ListItemLink>
             <ListItemLink target='_blank' href='https://github.com/AchoArnold/discount-for-student-dev'>
               <ListItemIcon>
-                <LinkIcon />
+                <GitHubIcon />
               </ListItemIcon>
               <ListItemText primary="Student Discounts on Developer Tools" />
             </ListItemLink>
