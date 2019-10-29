@@ -67,6 +67,18 @@ class Resources extends Component {
             </ListItemLink>
             <Divider />
             <ListSubheader component="div">Miscellaneous</ListSubheader>
+            <ListItemLink target='_blank' href='https://github.com/elaine-zheng/summer2020internships'>
+              <ListItemIcon>
+                <GitHubIcon />
+              </ListItemIcon>
+              <ListItemText primary="List of Summer 2020 Tech Internships" />
+            </ListItemLink>
+            <ListItemLink target='_blank' href='https://github.com/cmackenzie1/new-grads-2020'>
+              <ListItemIcon>
+                <GitHubIcon />
+              </ListItemIcon>
+              <ListItemText primary="List of 2020 New Grad Tech Roles" />
+            </ListItemLink>
             <ListItemLink target='_blank' href='https://education.github.com/pack/offers'>
               <ListItemIcon>
                 <GitHubIcon />
