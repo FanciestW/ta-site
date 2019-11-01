@@ -23,7 +23,7 @@ class AnnouncementBar extends Component {
     const priority = this.props.priority || 0;
     return this.state.closed ? null : (
       <div className="bar"
-        style={{ width: '100%', backgroundColor: colors[priority] }}>
+        style={{backgroundColor: colors[priority] }}>
         <Grid container
           spacing={2}
           justify='center'

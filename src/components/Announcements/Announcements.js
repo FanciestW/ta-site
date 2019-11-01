@@ -33,11 +33,9 @@ class Announcements extends Component {
   render() {
     const announcement = this.state.announcements[0];
     return announcement ? (
-      <div>
-        <AnnouncementBar priority={announcement.priority}
-          title={announcement.title}
-          message={announcement.message}/>
-      </div>
+      <AnnouncementBar priority={announcement.priority}
+        title={announcement.title}
+        message={announcement.message}/>
     ) : null;
   }
 }
