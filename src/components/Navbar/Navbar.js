@@ -40,7 +40,7 @@ class Navbar extends Component {
           {titles.map((text, index) => (
             <Link to={links[index]}
               key={index}
-              style={{ color: 'white', textDecoration: 'none' }}>
+              style={{ color: 'inherit', textDecoration: 'none' }}>
               <ListItem button className={'drawer-list-item'}>
                 <ListItemIcon className={'drawer-icon'}>{icons[index]}</ListItemIcon>
                 <ListItemText primary={text} />
@@ -59,8 +59,8 @@ class Navbar extends Component {
           </IconButton>
           <Typography variant="h6">{title || 'Missing Title'}</Typography>
           <div className="right">
-            <IconButton color="inherit">
-              {this.props.themeIsDark ? <BrightnessHighIcon onClick={this.props.themeHandler} /> : <Brightness4Icon onClick={this.props.themeHandler} />}
+            <IconButton color="inherit" onClick={this.props.themeHandler}>
+              {this.props.themeIsDark ? <BrightnessHighIcon /> : <Brightness4Icon />}
             </IconButton>
           </div>
         </Toolbar>
