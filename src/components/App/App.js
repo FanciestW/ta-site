@@ -51,7 +51,9 @@ class App extends Component {
                 <Classes classNames={classNames} classNums={classNums}/>
               </Route>
               <Route exact path='/contact' component={Contact} />
-              <Route><Redirect to="/" /></Route>
+              <Route>
+                <Redirect to="/" />
+              </Route>
             </Switch>
           </div>
         </Router>
