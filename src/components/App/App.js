@@ -18,12 +18,7 @@ import './App.scss';
 
 const theme = createMuiTheme({
   palette: {
-    type: 'dark',
-  },
-  a: {
-    '&hover': {
-      background: '#000',
-    }
+    type: 'light',
   }
 });
 
