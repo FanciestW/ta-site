@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { AppBar, IconButton, List, ListItem, ListItemIcon, ListItemText, Toolbar, Typography, SwipeableDrawer } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
+import Brightness4Icon from '@material-ui/icons/Brightness4';
+import BrightnessHighIcon from '@material-ui/icons/BrightnessHigh';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import './Navbar.scss';
@@ -38,7 +40,7 @@ class Navbar extends Component {
           {titles.map((text, index) => (
             <Link to={links[index]}
               key={index}
-              style={{color: 'white', textDecoration: 'none'}}>
+              style={{ color: 'white', textDecoration: 'none' }}>
               <ListItem button className={'drawer-list-item'}>
                 <ListItemIcon className={'drawer-icon'}>{icons[index]}</ListItemIcon>
                 <ListItemText primary={text} />
@@ -53,9 +55,14 @@ class Navbar extends Component {
       <AppBar position="static">
         <Toolbar>
           <IconButton edge="start" color="inherit" aria-label="menu" onClick={this.handleToggleDrawer}>
-            <MenuIcon  />
+            <MenuIcon />
           </IconButton>
           <Typography variant="h6">{title || 'Missing Title'}</Typography>
+          <div className="right">
+            <IconButton>
+              {this.props.themeIsDark ? <BrightnessHighIcon className="icon"/> : <Brightness4Icon className="icon"/>}
+            </IconButton>
+          </div>
         </Toolbar>
         <SwipeableDrawer open={this.state.open} onOpen={this.handleToggleDrawer} onClose={this.handleToggleDrawer} className={'side-drawer'}>
           {sideList}
@@ -70,6 +77,7 @@ Navbar.propTypes = {
   titles: PropTypes.array,
   links: PropTypes.array,
   icons: PropTypes.array,
+  themeIsDark: PropTypes.bool,
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }).isRequired,
