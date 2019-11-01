@@ -59,8 +59,8 @@ class Navbar extends Component {
           </IconButton>
           <Typography variant="h6">{title || 'Missing Title'}</Typography>
           <div className="right">
-            <IconButton>
-              {this.props.themeIsDark ? <BrightnessHighIcon onClick={this.props.themeHandler} className="icon"/> : <Brightness4Icon onClick={this.props.themeHandler} className="icon"/>}
+            <IconButton color="inherit">
+              {this.props.themeIsDark ? <BrightnessHighIcon onClick={this.props.themeHandler} /> : <Brightness4Icon onClick={this.props.themeHandler} />}
             </IconButton>
           </div>
         </Toolbar>
