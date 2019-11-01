@@ -20,6 +20,11 @@ const theme = createMuiTheme({
   palette: {
     type: 'dark',
   },
+  a: {
+    '&hover': {
+      background: '#000',
+    }
+  }
 });
 
 class App extends Component {

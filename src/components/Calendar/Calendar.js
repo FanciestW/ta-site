@@ -51,7 +51,6 @@ class Calendar extends Component {
     return (
       <div className='calendar-view' style={{ marginTop: '2rem' }}>
         <FullCalendar ref={this.calendarRef}
-          themeSystem='bootstrap'
           firstDay={1}
           allDaySlot={true}
           defaultView="timeGridWeek"

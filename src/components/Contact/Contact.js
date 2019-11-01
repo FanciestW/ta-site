@@ -37,7 +37,7 @@ class Contact extends Component {
             </Typography>
             <Typography variant="body1" component="p" align="left" className="contact-info">
               <PhoneIphoneIcon className="icons"/>
-              <Link href="sms:917-444-5340" color="inherit" className="contact-link">
+              <Link href="sms:917-444-5340" underline="none" color="inherit" className="contact-link">
                 (917) 444-5340
               </Link>
             </Typography>
