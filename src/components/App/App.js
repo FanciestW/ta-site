@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TodayIcon from '@material-ui/icons/Today';
@@ -45,18 +45,13 @@ class App extends Component {
               <Route exact path='/'>
                 <Home icons={homeIcons} actions={homeActions} descs={homeDescs} linkTitles={homeLinkTitles} links={homeLinks} />
               </Route>
-              <Route exact path='/calendar'>
-                <Calendar />
-              </Route>
-              <Route exact path='/resources'>
-                <Resources />
-              </Route>
+              <Route exact path='/calendar' component={Calendar} />
+              <Route exact path='/resources' component={Resources} />
               <Route exact path='/classes' >
                 <Classes classNames={classNames} classNums={classNums}/>
               </Route>
-              <Route exact path='/contact'>
-                <Contact />
-              </Route>
+              <Route exact path='/contact' component={Contact} />
+              <Route><Redirect to="/" /></Route>
             </Switch>
           </div>
         </Router>
