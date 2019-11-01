@@ -39,7 +39,7 @@ class App extends Component {
         <CssBaseline />
         <Router>
           <div className='app'>
-            <Navbar titles={navTitles} links={navLinks} icons={navIcons} onClick={this.test} />
+            <Navbar titles={navTitles} links={navLinks} icons={navIcons} />
             <Announcements />
             <Switch>
               <Route exact path='/'>
