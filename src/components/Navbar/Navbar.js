@@ -60,7 +60,7 @@ class Navbar extends Component {
           <Typography variant="h6">{title || 'Missing Title'}</Typography>
           <div className="right">
             <IconButton>
-              {this.props.themeIsDark ? <BrightnessHighIcon className="icon"/> : <Brightness4Icon className="icon"/>}
+              {this.props.themeIsDark ? <BrightnessHighIcon onClick={this.props.themeHandler} className="icon"/> : <Brightness4Icon onClick={this.props.themeHandler} className="icon"/>}
             </IconButton>
           </div>
         </Toolbar>
@@ -78,6 +78,7 @@ Navbar.propTypes = {
   links: PropTypes.array,
   icons: PropTypes.array,
   themeIsDark: PropTypes.bool,
+  themeHandler: PropTypes.func,
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }).isRequired,

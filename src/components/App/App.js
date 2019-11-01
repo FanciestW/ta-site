@@ -16,14 +16,32 @@ import Classes from '../Classes/Classes';
 import Contact from '../Contact/Contact';
 import './App.scss';
 
-const theme = createMuiTheme({
-  palette: {
-    type: 'light',
-  }
-});
-
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.handleThemeChange = this.handleThemeChange.bind(this);
+    this.state = {
+      theme: createMuiTheme({
+        palette: {
+          type: 'dark',
+        }
+      }),
+    };
+  }
+
+  handleThemeChange() {
+    const type = this.state.theme.palette.type === 'dark' ? 'light' : 'dark';
+    this.setState({
+      theme: createMuiTheme({
+        palette: {
+          type,
+        }
+      })
+    });
+  }
+
   render() {
+    const theme = this.state.theme;
     const homeIcons = [<TodayIcon key={1} />, <CloudDownloadIcon key={2} />, <SchoolIcon key={3} />, <ContactMailIcon key={4} />];
     const homeActions = ['Office Hour Calendar', 'Student Resources', 'Supported Classes', 'Contact Info'];
     const homeDescs = ['Need to Check Office Hours?', 'Looking for resources like lecture notes and helpful links?', 'Checking what classes I am the TA for?', 'Looking for contact information?'];
@@ -39,7 +57,7 @@ class App extends Component {
         <CssBaseline />
         <Router>
           <div className='app'>
-            <Navbar themeIsDark={theme.palette.type == 'dark'} titles={navTitles} links={navLinks} icons={navIcons} />
+            <Navbar themeIsDark={theme.palette.type === 'dark'} titles={navTitles} links={navLinks} icons={navIcons} themeHandler={this.handleThemeChange} />
             <Announcements />
             <Switch>
               <Route exact path='/'>
