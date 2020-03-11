@@ -23,7 +23,6 @@ class Announcements extends Component {
       uri: ANNOUNCEMENT_SERVER,
       json: true,
     }).then((apiRes) => {
-      console.log(apiRes.announcements);
       this.setState({ announcements: apiRes.announcements });
     }).catch((apiErr) => {
       console.log(`Announcement API Error: ${JSON.stringify(apiErr)}`);
