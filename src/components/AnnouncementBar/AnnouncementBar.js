@@ -43,7 +43,7 @@ class AnnouncementBar extends Component {
                 </Typography>
               </Grid>
               <Grid className='announcement-text' item xs>
-                <Typography variant='p'
+                <Typography variant='body1'
                   component='p'
                   align='left'
                   display='block'
@@ -78,7 +78,7 @@ AnnouncementBar.propTypes = {
     if (isNaN(priority)) {
       return new Error('Sorry the priority must be a number.');
     }
-    return priority >= 1 && priority <= 3 ? null : new Error('Priority must be a number from 0-2');
+    return priority >= 0 && priority <= 2 ? null : new Error('Priority must be a number from 0-2');
   },
 };
 

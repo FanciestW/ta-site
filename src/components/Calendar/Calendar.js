@@ -24,11 +24,11 @@ class Calendar extends Component {
     window.addEventListener('resize', this.updateWindowDimensions);
     this.calendarRef.current.getApi().changeView(this.state.width <= 500 ? 'timeGridDay' : 'timeGridWeek');
   }
-  
+
   componentWillUnmount() {
     window.removeEventListener('resize', this.updateWindowDimensions);
   }
-  
+
   updateWindowDimensions() {
     if (this.state.width !== window.innerWidth) {
       this.calendarRef.current.getApi().changeView(this.state.width <= 500 ? 'timeGridDay' : 'timeGridWeek');
