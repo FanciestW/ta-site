@@ -66,15 +66,6 @@ class Calendar extends Component {
           nowIndicator={true}
           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
           events={this.state.events}
-          eventClick={(event) => {
-            event.preventDefault();
-            event.jsEvent.preventDefault();
-            console.log('TEST2');
-            if (event.url) {
-              window.open(event.url, '_blank');
-              return true;
-            }
-          }}
         />
       </div>
     );
