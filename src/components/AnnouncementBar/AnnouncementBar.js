@@ -43,7 +43,7 @@ class AnnouncementBar extends Component {
                 </Typography>
               </Grid>
               <Grid className='announcement-text' item xs>
-                <Typography variant='p'
+                <Typography variant='body1'
                   component='p'
                   align='left'
                   display='block'
