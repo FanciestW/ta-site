@@ -6,8 +6,7 @@ import interactionPlugin from '@fullcalendar/interaction'; // needed for dayClic
 import request from 'request-promise';
 import './Calendar.scss';
 
-// const EVENTS_SERVER = 'https://xazbttr8qi.execute-api.us-east-1.amazonaws.com/dev/events';
-const EVENTS_SERVER = 'http://localhost:8080/events';
+const EVENTS_SERVER = 'https://xazbttr8qi.execute-api.us-east-1.amazonaws.com/dev/events';
 
 class Calendar extends Component {
 
