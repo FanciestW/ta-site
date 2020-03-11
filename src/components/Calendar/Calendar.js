@@ -6,7 +6,8 @@ import interactionPlugin from '@fullcalendar/interaction'; // needed for dayClic
 import request from 'request-promise';
 import './Calendar.scss';
 
-const EVENTS_SERVER = 'https://xazbttr8qi.execute-api.us-east-1.amazonaws.com/dev/events';
+// const EVENTS_SERVER = 'https://xazbttr8qi.execute-api.us-east-1.amazonaws.com/dev/events';
+const EVENTS_SERVER = 'http://localhost:8080/events';
 
 class Calendar extends Component {
 
@@ -24,11 +25,11 @@ class Calendar extends Component {
     window.addEventListener('resize', this.updateWindowDimensions);
     this.calendarRef.current.getApi().changeView(this.state.width <= 500 ? 'timeGridDay' : 'timeGridWeek');
   }
-  
+
   componentWillUnmount() {
     window.removeEventListener('resize', this.updateWindowDimensions);
   }
-  
+
   updateWindowDimensions() {
     if (this.state.width !== window.innerWidth) {
       this.calendarRef.current.getApi().changeView(this.state.width <= 500 ? 'timeGridDay' : 'timeGridWeek');
@@ -66,6 +67,15 @@ class Calendar extends Component {
           nowIndicator={true}
           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
           events={this.state.events}
+          eventClick={(event) => {
+            event.preventDefault();
+            event.jsEvent.preventDefault();
+            console.log('TEST2');
+            if (event.url) {
+              window.open(event.url, '_blank');
+              return true;
+            }
+          }}
         />
       </div>
     );
