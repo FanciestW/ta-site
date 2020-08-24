@@ -23,7 +23,7 @@ class App extends Component {
     this.state = {
       theme: createMuiTheme({
         palette: {
-          type: 'dark',
+          type: localStorage.getItem('theme') === 'light' ? 'light' : 'dark',
         }
       }),
     };
@@ -31,6 +31,7 @@ class App extends Component {
 
   handleThemeChange() {
     const type = this.state.theme.palette.type === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('theme', type);
     this.setState({
       theme: createMuiTheme({
         palette: {
