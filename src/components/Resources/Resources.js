@@ -27,13 +27,13 @@ class Resources extends Component {
               </ListItemIcon>
               <ListItemText primary="Bridge Class Lecture Slides" />
             </ListItemLink>
-            <ListItemLink target='_blank' href='http://www.cplusplus.com/'>
+            <ListItemLink target='_blank' href='http://eliza.newhaven.edu/apc'>
               <ListItemIcon>
                 <LinkIcon />
               </ListItemIcon>
               <ListItemText primary="Applied Introductory C Programming - Textbook Link" />
             </ListItemLink>
-            <ListItemLink target='_blank' href='http://eliza.newhaven.edu/apc'>
+            <ListItemLink target='_blank' href='http://www.cplusplus.com/'>
               <ListItemIcon>
                 <LinkIcon />
               </ListItemIcon>
