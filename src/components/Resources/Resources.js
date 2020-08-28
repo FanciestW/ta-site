@@ -21,11 +21,17 @@ class Resources extends Component {
         <Paper className='list'>
           <List component="nav" aria-label="links">
             <ListSubheader component="div">Intermediate C/C++</ListSubheader>
-            <ListItemLink target='_blank' href='https://unhnewhaven-my.sharepoint.com/:f:/g/personal/wlin2_unh_newhaven_edu/EiDLMHQp92ZKn82kkwNC5oEBTHzMyMQu6q-oJSh_SEIy-Q?e=AD3G14'>
+            <ListItemLink target='_blank' href='https://unhnewhaven-my.sharepoint.com/:f:/g/personal/wlin2_unh_newhaven_edu/EiDLMHQp92ZKn82kkwNC5oEBYfV397KcxuRY-x8fLgs8VA?e=qvnHgy'>
               <ListItemIcon>
                 <LinkIcon />
               </ListItemIcon>
               <ListItemText primary="Bridge Class Lecture Slides" />
+            </ListItemLink>
+            <ListItemLink target='_blank' href='https://unhnewhaven-my.sharepoint.com/:f:/g/personal/wlin2_unh_newhaven_edu/EsnfV4f5RbFHuxxClOumJJMBNuzB_D-HMFqBEfBlCKWsmQ?e=puUopC'>
+              <ListItemIcon>
+                <LinkIcon />
+              </ListItemIcon>
+              <ListItemText primary="Bridge Class Zoom Recordings" />
             </ListItemLink>
             <ListItemLink target='_blank' href='http://www.cplusplus.com/'>
               <ListItemIcon>
