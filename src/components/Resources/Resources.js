@@ -33,13 +33,13 @@ class Resources extends Component {
               </ListItemIcon>
               <ListItemText primary="Bridge Class Zoom Recordings" />
             </ListItemLink>
-            <ListItemLink target='_blank' href='http://www.cplusplus.com/'>
+            <ListItemLink target='_blank' href='http://eliza.newhaven.edu/apc'>
               <ListItemIcon>
                 <LinkIcon />
               </ListItemIcon>
               <ListItemText primary="Applied Introductory C Programming - Textbook Link" />
             </ListItemLink>
-            <ListItemLink target='_blank' href='http://eliza.newhaven.edu/apc'>
+            <ListItemLink target='_blank' href='http://www.cplusplus.com/'>
               <ListItemIcon>
                 <LinkIcon />
               </ListItemIcon>
@@ -73,17 +73,17 @@ class Resources extends Component {
             </ListItemLink>
             <Divider />
             <ListSubheader component="div">Miscellaneous</ListSubheader>
-            <ListItemLink target='_blank' href='https://github.com/elaine-zheng/summer2020internships'>
+            <ListItemLink target='_blank' href='https://github.com/Pitt-CSC/Summer2021-Internships'>
               <ListItemIcon>
                 <GitHubIcon />
               </ListItemIcon>
-              <ListItemText primary="List of Summer 2020 Tech Internships" />
+              <ListItemText primary="List of Summer 2021 Tech Internships" />
             </ListItemLink>
-            <ListItemLink target='_blank' href='https://github.com/cmackenzie1/new-grads-2020'>
+            <ListItemLink target='_blank' href='https://github.com/Pitt-CSC/NewGrad-2021'>
               <ListItemIcon>
                 <GitHubIcon />
               </ListItemIcon>
-              <ListItemText primary="List of 2020 New Grad Tech Roles" />
+              <ListItemText primary="List of 2021 New Grad Tech Roles" />
             </ListItemLink>
             <ListItemLink target='_blank' href='https://education.github.com/pack/offers'>
               <ListItemIcon>
