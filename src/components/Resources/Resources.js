@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Divider, Grid, List, ListItem, ListItemIcon, ListItemText, ListSubheader, Paper } from '@material-ui/core';
-import LinkIcon from '@material-ui/icons/Link';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import WorkIcon from '@material-ui/icons/Work';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
