@@ -7,7 +7,7 @@ import request from 'request-promise';
 import { PopupWidget } from 'react-calendly';
 import './Calendar.scss';
 
-const EVENTS_SERVER = 'https://xazbttr8qi.execute-api.us-east-1.amazonaws.com/dev/events';
+const EVENTS_SERVER = 'https://l0rrfmsv3b.execute-api.us-east-1.amazonaws.com/prod/events';
 
 class Calendar extends Component {
 
