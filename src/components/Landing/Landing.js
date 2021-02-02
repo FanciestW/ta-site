@@ -4,16 +4,18 @@ import * as THREE from 'three';
 
 export default function Landing() {
   const [vantaEffect, setVantaEffect] = useState(0);
-  const myRef = useRef(null);
+  const backgroundDivRef = useRef(null);
   useEffect(() => {
     if (!vantaEffect) {
       setVantaEffect(
         VantaNet({
-          el: myRef.current,
+          el: backgroundDivRef.current,
           THREE: THREE,
+          points: 20.00,
+          maxDistance: 25.00,
           mouseControls: true,
           touchControls: true,
-          gyroControls: false,
+          gyroControls: true,
           minHeight: 200.0,
           minWidth: 200.0,
           scale: 1.0,
@@ -27,5 +29,5 @@ export default function Landing() {
       if (vantaEffect) vantaEffect.destroy();
     };
   }, [vantaEffect]);
-  return <div style={{ height: '100vh', width: '100vw' }} ref={myRef}></div>;
+  return <div style={{ height: '100vh', width: '100vw' }} ref={backgroundDivRef}></div>;
 }
