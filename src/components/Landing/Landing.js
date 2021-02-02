@@ -29,5 +29,10 @@ export default function Landing() {
       if (vantaEffect) vantaEffect.destroy();
     };
   }, [vantaEffect]);
-  return <div style={{ height: '100vh', width: '100vw' }} ref={backgroundDivRef}></div>;
+
+  return (
+    <>
+      <div style={{ position: 'absolute', zIndex: -999, height: '100vh', width: '100vw' }} ref={backgroundDivRef}></div>
+    </>
+  );
 }
