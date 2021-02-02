@@ -57,7 +57,7 @@ class Navbar extends Component {
           <IconButton edge="start" color="inherit" aria-label="menu" onClick={this.handleToggleDrawer}>
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6">{title || 'Missing Title'}</Typography>
+          <Typography variant="h6">{title || 'TA William'}</Typography>
           <div className="right">
             <IconButton color="inherit" onClick={this.props.themeHandler}>
               {this.props.themeIsDark ? <BrightnessHighIcon /> : <Brightness4Icon />}
