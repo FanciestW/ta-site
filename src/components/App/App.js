@@ -60,7 +60,7 @@ class App extends Component {
     const homeLinkTitles = ['View Calendar', 'See Resources', 'Check Supported Classes', 'Get My Contact Info'];
     const homeLinks = ['/calendar', '/resources', '/classes', '/contact'];
     const navTitles = ['Home', 'Calendar', 'Resources', 'Classes', 'Contact'];
-    const navLinks = ['/', '/calendar', '/resources', '/classes', '/contact'];
+    const navLinks = ['/home', '/calendar', '/resources', '/classes', '/contact'];
     const navIcons = [
       <HomeIcon key={0} />,
       <TodayIcon key={1} />,
@@ -89,7 +89,7 @@ class App extends Component {
                 />
                 <Announcements />
                 <Switch>
-                  <Route exact path='/'>
+                  <Route exact path='/home'>
                     <Home
                       icons={homeIcons}
                       actions={homeActions}
@@ -105,7 +105,7 @@ class App extends Component {
                   </Route>
                   <Route exact path='/contact' component={Contact} />
                   <Route>
-                    <Redirect to='/' />
+                    <Redirect to='/landing' />
                   </Route>
                 </Switch>
               </div>
