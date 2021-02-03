@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import VantaNet from 'vanta/dist/vanta.net.min';
 import * as THREE from 'three';
+import LodashDebounce from 'lodash.debounce';
 
 export default function Landing() {
   const [windowDimensions, setWindowDimensions] = useState({
@@ -13,6 +14,7 @@ export default function Landing() {
   useEffect(() => {
     const maxDistances = [18.0, 20.0, 25.0];
     const maxDistance = maxDistances[Math.min(maxDistances.length-1, Math.floor(window.innerWidth / 500))];
+    console.log(`maxDistance: ${maxDistance}`);
     if (!vantaEffect) {
       setVantaEffect(
         VantaNet({
@@ -42,7 +44,7 @@ export default function Landing() {
         width: window.innerWidth,
       });
     }
-    window.addEventListener('resize', handleWindowResize);
+    window.addEventListener('resize', LodashDebounce(handleWindowResize, 1000));
   });
 
   return (
