@@ -13,7 +13,6 @@ export default function Landing() {
   useEffect(() => {
     const maxDistances = [18.0, 20.0, 25.0];
     const maxDistance = maxDistances[Math.min(maxDistances.length-1, Math.floor(window.innerWidth / 500))];
-    console.log(`calc: ${window.innerWidth / 500}\nmaxDistance: ${maxDistance}`);
     if (!vantaEffect) {
       setVantaEffect(
         VantaNet({
