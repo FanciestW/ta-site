@@ -7,7 +7,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import SchoolIcon from '@material-ui/icons/School';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
 import CloudDownloadIcon from '@material-ui/icons/CloudDownload';
-import Landing from '../Landing/Landing';
+import CountdownPage from '../CountdownPage/CountdownPage';
 import Navbar from '../Navbar/Navbar';
 import Announcements from '../Announcements/Announcements';
 import Home from '../Home/Home';
@@ -76,7 +76,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path='/landing'>
-              <Landing />
+              <CountdownPage />
             </Route>
             <Route>
               <div className='app'>
