@@ -22,7 +22,7 @@ export default function Landing() {
           points: 20.0,
           maxDistance: maxDistance,
           spacing: 15.0,
-          mouseControls: true,
+          mouseControls: false,
           touchControls: false,
           gyroControls: false,
           minHeight: 200.0,
