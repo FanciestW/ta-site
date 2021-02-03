@@ -3,16 +3,25 @@ import VantaNet from 'vanta/dist/vanta.net.min';
 import * as THREE from 'three';
 
 export default function Landing() {
+  const [windowDimensions, setWindowDimensions] = useState({
+    height: window.innerHeight,
+    width: window.innerWidth,
+  });
   const [vantaEffect, setVantaEffect] = useState(0);
   const backgroundDivRef = useRef(null);
+
   useEffect(() => {
+    const maxDistances = [18.0, 20.0, 25.0];
+    const maxDistance = maxDistances[Math.min(maxDistances.length-1, Math.floor(window.innerWidth / 500))];
+    console.log(`calc: ${window.innerWidth / 500}\nmaxDistance: ${maxDistance}`);
     if (!vantaEffect) {
       setVantaEffect(
         VantaNet({
           el: backgroundDivRef.current,
           THREE: THREE,
-          points: 20.00,
-          maxDistance: 25.00 * Math.min(1,Math.sqrt(window.innerWidth/600)),
+          points: 20.0,
+          maxDistance: maxDistance,
+          spacing: 15.0,
           mouseControls: true,
           touchControls: false,
           gyroControls: false,
@@ -25,14 +34,21 @@ export default function Landing() {
         })
       );
     }
-    return () => {
-      if (vantaEffect) vantaEffect.destroy();
-    };
-  }, [vantaEffect]);
+  }, [vantaEffect, windowDimensions]);
+
+  useEffect(() => {
+    function handleWindowResize() {
+      setWindowDimensions({
+        height: window.innerHeight,
+        width: window.innerWidth,
+      });
+    }
+    window.addEventListener('resize', handleWindowResize);
+  });
 
   return (
     <>
-      <div style={{ position: 'absolute', zIndex: -999, height: '100vh', width: '100vw' }} ref={backgroundDivRef}></div>
+      <div style={{ position: 'absolute', zIndex: -999, height: '100%', width: '100%' }} ref={backgroundDivRef}></div>
     </>
   );
 }
