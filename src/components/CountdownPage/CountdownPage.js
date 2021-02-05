@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardActions, CardContent, Grid, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Landing from '../Landing/Landing';
+import Countdown from '../Countdown/Countdown';
 
 const useStyles = makeStyles({
   root: {
@@ -41,48 +42,7 @@ export default function CountdownPage() {
               <Typography variant='h5' component='h2'>
                 Time Left:
               </Typography>
-              <Grid container direction='row'>
-                <Grid item xs={3}>
-                  <Grid container direction='column' alignItems='center' justify='center'>
-                    <Grid item xs={6}>
-                      12
-                    </Grid>
-                    <Grid item xs={6}>
-                      Days
-                    </Grid>
-                  </Grid>
-                </Grid>
-                <Grid item xs={3}>
-                  <Grid container direction='column' alignItems='center' justify='center'>
-                    <Grid item xs={6}>
-                      23
-                    </Grid>
-                    <Grid item xs={6}>
-                      Hours
-                    </Grid>
-                  </Grid>
-                </Grid>
-                <Grid item xs={3}>
-                  <Grid container direction='column' alignItems='center' justify='center'>
-                    <Grid item xs={6}>
-                      59
-                    </Grid>
-                    <Grid item xs={6}>
-                      Minutes
-                    </Grid>
-                  </Grid>
-                </Grid>
-                <Grid item xs={3}>
-                  <Grid container direction='column' alignItems='center' justify='center'>
-                    <Grid item xs={6}>
-                      30
-                    </Grid>
-                    <Grid item xs={6}>
-                      Seconds
-                    </Grid>
-                  </Grid>
-                </Grid>
-              </Grid>
+              <Countdown />
               <Typography variant='body2' component='p' style={{ overflow: 'wrap' }}>
                 I have graduated from UNH. I am no longer a teach assistant.
                 <br />
