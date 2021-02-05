@@ -30,13 +30,12 @@ export default function CountdownPage() {
       <Landing />
       <Grid
         container
-        spacing={2}
         direction='column'
         alignItems='center'
         justify='center'
         style={{ minHeight: '100vh' }}
       >
-        <Grid item x2={12}>
+        <Grid item xs={12}>
           <Card className={classes.root}>
             <CardContent style={{ textAlign: 'center' }}>
               <Typography variant='h5' component='h2'>
