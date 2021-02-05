@@ -1,19 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Grid } from '@material-ui/core';
+import ReactCountdown from 'react-countdown';
 
 export default function Countdown() {
-  const [counterSeconds, setCounterSecounds] = useState(0);
-  const [counterMinutes, setCounterMinutes] = useState(0);
-  const [counterHours, setCounterHours] = useState(0);
-  const [counterDays, setCounterDays] = useState(0);
-
-  return (
-    <>
+  const countdownRenderer = ({ days, hours, minutes, seconds }) => {
+    return (
       <Grid container direction='row'>
         <Grid item xs={3}>
           <Grid container direction='column' alignItems='center' justify='center'>
             <Grid item xs={6}>
-              {counterDays}
+              {days}
             </Grid>
             <Grid item xs={6}>
               Days
@@ -23,7 +19,7 @@ export default function Countdown() {
         <Grid item xs={3}>
           <Grid container direction='column' alignItems='center' justify='center'>
             <Grid item xs={6}>
-              {counterHours}
+              {hours}
             </Grid>
             <Grid item xs={6}>
               Hours
@@ -33,7 +29,7 @@ export default function Countdown() {
         <Grid item xs={3}>
           <Grid container direction='column' alignItems='center' justify='center'>
             <Grid item xs={6}>
-              {counterMinutes}
+              {minutes}
             </Grid>
             <Grid item xs={6}>
               Minutes
@@ -43,7 +39,7 @@ export default function Countdown() {
         <Grid item xs={3}>
           <Grid container direction='column' alignItems='center' justify='center'>
             <Grid item xs={6}>
-              {counterSeconds}
+              {seconds}
             </Grid>
             <Grid item xs={6}>
               Seconds
@@ -51,6 +47,12 @@ export default function Countdown() {
           </Grid>
         </Grid>
       </Grid>
+    );
+  };
+
+  return (
+    <>
+      <ReactCountdown date={Date.now() + 5 * 24 * 60 * 60 * 1000} renderer={countdownRenderer} />
     </>
   );
 }
