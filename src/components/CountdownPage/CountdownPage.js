@@ -5,7 +5,9 @@ import Landing from '../Landing/Landing';
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 275,
+    minWidth: 400,
+    maxWidth: 600,
+    width: '60vw',
   },
   bullet: {
     display: 'inline-block',
@@ -35,24 +37,62 @@ export default function CountdownPage() {
       >
         <Grid item x2={12}>
           <Card className={classes.root}>
-            <CardContent>
-              <Typography className={classes.title} color='textSecondary' gutterBottom>
-                Word of the Day
-              </Typography>
+            <CardContent style={{ textAlign: 'center' }}>
               <Typography variant='h5' component='h2'>
-                Hello World
+                Time Left:
               </Typography>
-              <Typography className={classes.pos} color='textSecondary'>
-                adjective
-              </Typography>
-              <Typography variant='body2' component='p'>
-                well meaning and kindly.
+              <Grid container direction='row'>
+                <Grid item xs={3}>
+                  <Grid container direction='column' alignItems='center' justify='center'>
+                    <Grid item xs={6}>
+                      12
+                    </Grid>
+                    <Grid item xs={6}>
+                      Days
+                    </Grid>
+                  </Grid>
+                </Grid>
+                <Grid item xs={3}>
+                  <Grid container direction='column' alignItems='center' justify='center'>
+                    <Grid item xs={6}>
+                      23
+                    </Grid>
+                    <Grid item xs={6}>
+                      Hours
+                    </Grid>
+                  </Grid>
+                </Grid>
+                <Grid item xs={3}>
+                  <Grid container direction='column' alignItems='center' justify='center'>
+                    <Grid item xs={6}>
+                      59
+                    </Grid>
+                    <Grid item xs={6}>
+                      Minutes
+                    </Grid>
+                  </Grid>
+                </Grid>
+                <Grid item xs={3}>
+                  <Grid container direction='column' alignItems='center' justify='center'>
+                    <Grid item xs={6}>
+                      30
+                    </Grid>
+                    <Grid item xs={6}>
+                      Seconds
+                    </Grid>
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Typography variant='body2' component='p' style={{ overflow: 'wrap' }}>
+                I have graduated from UNH. I am no longer a teach assistant.
                 <br />
-                {'"a benevolent smile"'}
+                For that reason, this website will soon be taken down.
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size='small'>Learn More</Button>
+              <Button size='small' href='/home'>
+                Continue to Site
+              </Button>
             </CardActions>
           </Card>
         </Grid>
