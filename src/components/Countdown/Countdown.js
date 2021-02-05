@@ -1,48 +1,49 @@
 import React from 'react';
-import { Grid } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 import ReactCountdown from 'react-countdown';
 
 export default function Countdown() {
+  // eslint-disable-next-line react/prop-types
   const countdownRenderer = ({ days, hours, minutes, seconds }) => {
     return (
       <Grid container direction='row'>
         <Grid item xs={3}>
           <Grid container direction='column' alignItems='center' justify='center'>
             <Grid item xs={6}>
-              {days}
+              <Typography variant='h3'>{days}</Typography>
             </Grid>
             <Grid item xs={6}>
-              Days
-            </Grid>
-          </Grid>
-        </Grid>
-        <Grid item xs={3}>
-          <Grid container direction='column' alignItems='center' justify='center'>
-            <Grid item xs={6}>
-              {hours}
-            </Grid>
-            <Grid item xs={6}>
-              Hours
+              <Typography variant='subtitle1'>Days</Typography>
             </Grid>
           </Grid>
         </Grid>
         <Grid item xs={3}>
           <Grid container direction='column' alignItems='center' justify='center'>
             <Grid item xs={6}>
-              {minutes}
+              <Typography variant='h3'>{hours}</Typography>
             </Grid>
             <Grid item xs={6}>
-              Minutes
+              <Typography variant='subtitle1'>Hours</Typography>
             </Grid>
           </Grid>
         </Grid>
         <Grid item xs={3}>
           <Grid container direction='column' alignItems='center' justify='center'>
             <Grid item xs={6}>
-              {seconds}
+              <Typography variant='h3'>{minutes}</Typography>
             </Grid>
             <Grid item xs={6}>
-              Seconds
+              <Typography variant='subtitle1'>Minutes</Typography>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item xs={3}>
+          <Grid container direction='column' alignItems='center' justify='center'>
+            <Grid item xs={6}>
+              <Typography variant='h3'>{seconds}</Typography>
+            </Grid>
+            <Grid item xs={6}>
+              <Typography variant='subtitle1'>Seconds</Typography>
             </Grid>
           </Grid>
         </Grid>
