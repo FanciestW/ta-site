@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Typography } from '@material-ui/core';
 import ReactCountdown from 'react-countdown';
 
-export default function Countdown() {
+export default function Countdown(props) {
   // eslint-disable-next-line react/prop-types
   const countdownRenderer = ({ days, hours, minutes, seconds }) => {
     return (
@@ -53,7 +53,7 @@ export default function Countdown() {
 
   return (
     <>
-      <ReactCountdown date={new Date(2021, 2, 1, 0, 0, 0)} renderer={countdownRenderer} />
+      <ReactCountdown date={props.date || new Date(2021, 2, 1, 0, 0, 0)} renderer={countdownRenderer} />
     </>
   );
 }

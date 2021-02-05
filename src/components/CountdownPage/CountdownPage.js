@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardActions, CardContent, Grid, Typography, Button } from '@material-ui/core';
+import { Card, CardActions, CardContent, Container, Grid, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Landing from '../Landing/Landing';
 import Countdown from '../Countdown/Countdown';
@@ -9,6 +9,8 @@ const useStyles = makeStyles({
     minWidth: 400,
     maxWidth: 600,
     width: '60vw',
+    padding: 10,
+    backgroundColor: '#2B2496',
   },
   bullet: {
     display: 'inline-block',
@@ -28,27 +30,23 @@ export default function CountdownPage() {
   return (
     <div>
       <Landing />
-      <Grid
-        container
-        direction='column'
-        alignItems='center'
-        justify='center'
-        style={{ minHeight: '100vh' }}
-      >
+      <Grid container direction='column' alignItems='center' justify='center' style={{ minHeight: '100vh' }}>
         <Grid item xs={12}>
           <Card className={classes.root}>
             <CardContent style={{ textAlign: 'center' }}>
-              <Typography variant='h5' component='h2'>
+              <Typography variant='h4'>
                 Time Left:
               </Typography>
-              <Countdown />
+              <Container style={{margin: '20px 0px'}}>
+                <Countdown />
+              </Container>
               <Typography variant='body2' component='p' style={{ overflow: 'wrap' }}>
-                I have graduated from UNH. I am no longer a teach assistant.
+                I have graduated from UNH. I am no longer a teaching assistant.
                 <br />
                 For that reason, this website will soon be taken down.
               </Typography>
             </CardContent>
-            <CardActions>
+            <CardActions style={{ justifyContent: 'center' }}>
               <Button size='small' href='/home'>
                 Continue to Site
               </Button>
