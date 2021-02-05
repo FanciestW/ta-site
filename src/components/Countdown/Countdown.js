@@ -52,7 +52,7 @@ export default function Countdown() {
 
   return (
     <>
-      <ReactCountdown date={Date.now() + 5 * 24 * 60 * 60 * 1000} renderer={countdownRenderer} />
+      <ReactCountdown date={new Date(2021, 2, 1, 0, 0, 0)} renderer={countdownRenderer} />
     </>
   );
 }
