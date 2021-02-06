@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Cookie from 'js-cookie';
+import { useLocation } from 'react-router-dom';
 import { Card, CardActions, CardContent, Container, Grid, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Landing from '../Landing/Landing';
@@ -27,6 +29,13 @@ const useStyles = makeStyles({
 
 export default function CountdownPage() {
   const classes = useStyles();
+
+  useEffect(() => {
+    Cookie.set('seenNotice', true, { expires: 1 });
+  }, []);
+
+  const redirectUri = new URLSearchParams(useLocation().search).get('redirect')
+
   return (
     <div>
       <Landing />
@@ -34,10 +43,8 @@ export default function CountdownPage() {
         <Grid item xs={12}>
           <Card className={classes.root}>
             <CardContent style={{ textAlign: 'center' }}>
-              <Typography variant='h4'>
-                Time Left:
-              </Typography>
-              <Container style={{margin: '20px 0px'}}>
+              <Typography variant='h4'>Time Left:</Typography>
+              <Container style={{ margin: '20px 0px' }}>
                 <Countdown />
               </Container>
               <Typography variant='body2' component='p' style={{ overflow: 'wrap' }}>
@@ -47,7 +54,7 @@ export default function CountdownPage() {
               </Typography>
             </CardContent>
             <CardActions style={{ justifyContent: 'center' }}>
-              <Button size='small' href='/home'>
+              <Button size='small' href={redirectUri}>
                 Continue to Site
               </Button>
             </CardActions>
