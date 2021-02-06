@@ -34,7 +34,7 @@ export default function CountdownPage() {
     Cookie.set('seenNotice', true, { expires: 1 });
   }, []);
 
-  const redirectUri = new URLSearchParams(useLocation().search).get('redirect');
+  const redirectUri = new URLSearchParams(useLocation().search).get('redirect') || '/home';
 
   return (
     <div>
