@@ -105,7 +105,7 @@ class App extends Component {
                   </Route>
                   <Route exact path='/contact' component={Contact} />
                   <Route>
-                    <Redirect to='/landing' />
+                    <Redirect to='/home' />
                   </Route>
                 </Switch>
               </div>
