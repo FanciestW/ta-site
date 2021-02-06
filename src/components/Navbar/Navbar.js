@@ -28,6 +28,14 @@ class Navbar extends Component {
     this.handleToggleDrawer = this.handleToggleDrawer.bind(this);
   }
 
+  componentDidMount() {
+    const history = this.props.history;
+
+    if (!Cookie.get('seenNotice')) {
+      history.push(encodeURI(`/landing?redirect=${this.props.location.pathname}`));
+    }
+  }
+
   handleToggleDrawer() {
     if (this.state.open) {
       this.setState({ open: false });
@@ -37,12 +45,10 @@ class Navbar extends Component {
   }
 
   render() {
-    const location = this.props.location;
-    const history = this.props.history;
     const titles = this.props.titles;
     const links = this.props.links;
     const icons = this.props.icons;
-    const title = titles[links.indexOf(location.pathname)];
+    const title = titles[links.indexOf(this.props.location.pathname)];
     const sideList = (
       <div
         className={'side-list'}
@@ -63,10 +69,6 @@ class Navbar extends Component {
         </List>
       </div>
     );
-
-    if (!Cookie.get('seenNotice')) {
-      history.push(encodeURI(`/landing?redirect=${location.pathname}`));
-    }
 
     return (
       <AppBar position='static'>
