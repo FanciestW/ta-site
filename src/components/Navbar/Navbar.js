@@ -15,7 +15,7 @@ import {
 import MenuIcon from '@material-ui/icons/Menu';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
 import BrightnessHighIcon from '@material-ui/icons/BrightnessHigh';
-import { BrowserRouter as Router, Link, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import './Navbar.scss';
 
@@ -70,7 +70,6 @@ class Navbar extends Component {
 
     return (
       <AppBar position='static'>
-        {/* {Cookie.get('seenNotice') ? null : <Redirect push to='/landing' />} */}
         <Toolbar>
           <IconButton edge='start' color='inherit' aria-label='menu' onClick={this.handleToggleDrawer}>
             <MenuIcon />
