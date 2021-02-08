@@ -43,14 +43,13 @@ export default function CountdownPage() {
         <Grid item xs={12}>
           <Card className={classes.root}>
             <CardContent style={{ textAlign: 'center' }}>
-              <Typography variant='h4'>Time Left:</Typography>
+              <Typography variant='h4'>Website Time Left:</Typography>
               <Container style={{ margin: '20px 0px' }}>
                 <Countdown />
               </Container>
-              <Typography variant='body2' component='p' style={{ overflow: 'wrap' }}>
-                I have graduated from UNH. I am no longer a teaching assistant.
-                <br />
-                For that reason, this website will soon be taken down.
+              <Typography variant='body2' component='p' style={{ overflow: 'wrap', padding: 10 }}>
+                I am no longer a teaching assistant because I have graduated from UNH.
+                For that reason, this website will be taken down at the end of this countdown.
               </Typography>
             </CardContent>
             <CardActions style={{ justifyContent: 'center' }}>
