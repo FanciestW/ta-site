@@ -1,10 +1,10 @@
 import React from 'react';
-import Landing from '../Landing/Landing';
+import NetBackground from '../NetBackground/NetBackground';
 
 export default function NotFoundPage() {
   return (
     <div>
-      <Landing />
+      <NetBackground />
     </div>
   );
 }

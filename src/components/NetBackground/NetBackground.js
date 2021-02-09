@@ -3,7 +3,7 @@ import VantaNet from 'vanta/dist/vanta.net.min';
 import * as THREE from 'three';
 import LodashDebounce from 'lodash.debounce';
 
-export default function Landing() {
+export default function NetBackground() {
   const [windowDimensions, setWindowDimensions] = useState({
     height: window.innerHeight,
     width: window.innerWidth,
