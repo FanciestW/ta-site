@@ -15,6 +15,7 @@ import Calendar from '../Calendar/Calendar';
 import Resources from '../Resources/Resources';
 import Classes from '../Classes/Classes';
 import Contact from '../Contact/Contact';
+import NotFoundPage from '../NotFoundPage/NotFoundPage';
 import './App.scss';
 
 class App extends Component {
@@ -75,9 +76,8 @@ class App extends Component {
         <CssBaseline />
         <Router>
           <Switch>
-            <Route exact path='/landing'>
-              <CountdownPage />
-            </Route>
+            <Route exact path='/landing' component={CountdownPage} />
+            <Route exact path="/404" component={NotFoundPage} />
             <Route>
               <div className='app'>
                 <Navbar
@@ -105,7 +105,7 @@ class App extends Component {
                   </Route>
                   <Route exact path='/contact' component={Contact} />
                   <Route>
-                    <Redirect to='/home' />
+                    <Redirect to='/404' />
                   </Route>
                 </Switch>
               </div>
