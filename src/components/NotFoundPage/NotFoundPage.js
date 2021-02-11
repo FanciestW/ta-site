@@ -23,7 +23,7 @@ export default function NotFoundPage() {
         <Grid item xs={12}>
           <Card className={classes.root}>
             <CardContent style={{ textAlign: 'center' }}>
-              <Typography variant='h4'>Website Time Left:</Typography>
+              <Typography variant='h4'>Uh-oh!</Typography>
               <Container style={{ margin: '20px 0px' }}>
                 <Typography variant='h2'>404</Typography>
               </Container>
