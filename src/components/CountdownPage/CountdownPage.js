@@ -3,7 +3,7 @@ import Cookie from 'js-cookie';
 import { useLocation } from 'react-router-dom';
 import { Card, CardActions, CardContent, Container, Grid, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import Landing from '../Landing/Landing';
+import NetBackground from '../NetBackground/NetBackground';
 import Countdown from '../Countdown/Countdown';
 
 const useStyles = makeStyles({
@@ -38,19 +38,18 @@ export default function CountdownPage() {
 
   return (
     <div>
-      <Landing />
+      <NetBackground />
       <Grid container direction='column' alignItems='center' justify='center' style={{ minHeight: '100vh' }}>
         <Grid item xs={12}>
           <Card className={classes.root}>
             <CardContent style={{ textAlign: 'center' }}>
-              <Typography variant='h4'>Time Left:</Typography>
+              <Typography variant='h4'>Website Time Left:</Typography>
               <Container style={{ margin: '20px 0px' }}>
                 <Countdown />
               </Container>
-              <Typography variant='body2' component='p' style={{ overflow: 'wrap' }}>
-                I have graduated from UNH. I am no longer a teaching assistant.
-                <br />
-                For that reason, this website will soon be taken down.
+              <Typography variant='body2' component='p' style={{ overflow: 'wrap', padding: 10 }}>
+                I am no longer a teaching assistant because I have graduated from UNH.
+                For that reason, this website will be taken down at the end of this countdown.
               </Typography>
             </CardContent>
             <CardActions style={{ justifyContent: 'center' }}>
