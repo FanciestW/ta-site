@@ -89,7 +89,7 @@ class App extends Component {
                 />
                 <Announcements />
                 <Switch>
-                  <Route exact path={'/home', '/'}>
+                  <Route exact path={['/home', '/']}>
                     <Home
                       icons={homeIcons}
                       actions={homeActions}
